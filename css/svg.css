@@ -1,0 +1,147 @@
+svg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 300pt;
+  height: 300pt; }
+
+/**************** z-border ****************/
+.z-border-showing {
+  fill: none;
+  stroke: black;
+  stroke-width: 30px;
+  stroke-dasharray: 37000;
+  stroke-dashoffset: 0;
+  animation: 6s z-border forwards; }
+
+@keyframes z-border {
+  0% {
+    fill: none;
+    stroke-dashoffset: 37000; }
+  80% {
+    fill: none;
+    stroke-dashoffset: 0; }
+  100% {
+    fill: black;
+    stroke-dashoffset: 0; } }
+.z-border-spin {
+  fill: black;
+  transform-origin: center;
+  -webkit-animation: spin-reverse 256s linear infinite;
+  -moz-animation: spin-reverse 256s linear infinite;
+  animation: spin-reverse 256s linear infinite; }
+
+/**************** z-circle ****************/
+#z-circle {
+  fill: none;
+  stroke: #14B7FA;
+  stroke-width: 3px;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+  animation: 4s z-circle forwards; }
+
+@keyframes z-circle {
+  0% {
+    fill: none;
+    stroke-dashoffset: 24800; }
+  80% {
+    fill: none;
+    stroke-dashoffset: 0; }
+  100% {
+    fill: #14B7FA;
+    stroke-dashoffset: 0; } }
+/**************** z-letter ****************/
+.z-letter-showing {
+  stroke: #00ebd4;
+  stroke-width: 30px;
+  stroke-dasharray: 19150;
+  stroke-dashoffset: 0;
+  animation: 8s z-letter forwards; }
+
+.z-letter-pulse {
+  fill: #00ebd4;
+  animation: pulse .9s infinite; }
+
+@keyframes z-letter {
+  0% {
+    fill: none;
+    stroke-dashoffset: 19150; }
+  30% {
+    fill: none;
+    stroke-dashoffset: 0; }
+  100% {
+    fill: #00ebd4;
+    stroke-dashoffset: 0; } }
+@keyframes pulse {
+  0% {
+    fill-opacity: 0.8; }
+  50% {
+    fill-opacity: 1; }
+  100% {
+    fill-opacity: 0.8; } }
+@keyframes spin-reverse {
+  100% {
+    -webkit-transform: rotateZ(-360deg);
+    transform: rotateZ(-360deg); } }
+@keyframes spin {
+  100% {
+    -webkit-transform: rotateZ(360deg);
+    transform: rotateZ(360deg); } }
+/* images */
+.hideCircleDiv {
+  display: block;
+  transform: scale(0);
+  opacity: 0; }
+
+.good {
+  animation: anim .3s ease-in-out; }
+
+.center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto; }
+
+.dottedCircle {
+  width: 450px;
+  height: 450px;
+  transform-origin: center;
+  -webkit-animation: spin-reverse 128s linear infinite;
+  -moz-animation: spin-reverse 128s linear infinite;
+  animation: spin-reverse 128s linear infinite; }
+
+.ringLong {
+  width: 470px;
+  height: 470px;
+  transform-origin: center;
+  -webkit-animation: spin 128s linear infinite;
+  -moz-animation: spin 128s linear infinite;
+  animation: spin 128s linear infinite; }
+
+.ringPiece {
+  width: 600px;
+  height: 600px;
+  transform-origin: center;
+  -webkit-animation: spin 128s linear infinite;
+  -moz-animation: spin 128s linear infinite;
+  animation: spin 128s linear infinite; }
+
+@keyframes anim {
+  0% {
+    display: none;
+    opacity: 0; }
+  1% {
+    display: block;
+    opacity: 0;
+    transform: scale(0); }
+  100% {
+    display: block;
+    opacity: 1;
+    transform: scale(1); } }
+
+/*# sourceMappingURL=svg.css.map */

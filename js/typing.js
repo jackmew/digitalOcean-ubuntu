@@ -12,7 +12,7 @@ var deep = 0 ;
 
 // begin and loading...
 setInterval(function() {
-  if($("#loading").text().length > 5) {
+  if($("#loading").text().length > 2) {
     $("#loading").text('.');
   } else {
     $("#loading").append('.');
