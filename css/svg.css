@@ -85,10 +85,12 @@ svg {
 @keyframes spin-reverse {
   100% {
     -webkit-transform: rotateZ(-360deg);
+    -ms-transform: rotateZ(-360deg);
     transform: rotateZ(-360deg); } }
 @keyframes spin {
   100% {
     -webkit-transform: rotateZ(360deg);
+    -ms-transform: rotateZ(-360deg);
     transform: rotateZ(360deg); } }
 /* images */
 .hideCircleDiv {
@@ -106,6 +108,14 @@ svg {
   left: 0;
   right: 0;
   margin: auto; }
+
+#smallDottedCircle {
+  width: 300px;
+  height: 300px;
+  transform-origin: center;
+  -webkit-animation: spin 128s linear infinite;
+  -moz-animation: spin 128s linear infinite;
+  animation: spin 128s linear infinite; }
 
 .dottedCircle {
   width: 450px;
@@ -143,5 +153,26 @@ svg {
     display: block;
     opacity: 1;
     transform: scale(1); } }
+/* < 480px */
+.typing-panel {
+  zoom: 75%; }
+
+.rotate-panel {
+  zoom: 50%; }
+
+/* >480px & <600px */
+@media all and (min-width: 480px) {
+  .typing-panel {
+    zoom: 85%; }
+
+  .rotate-panel {
+    zoom: 70%; } }
+/* >600px */
+@media all and (min-width: 600px) {
+  .typing-panel {
+    zoom: 100%; }
+
+  .rotate-panel {
+    zoom: 100%; } }
 
 /*# sourceMappingURL=svg.css.map */
