@@ -28,6 +28,14 @@ $(function() {
         $("#circleDiv").addClass("good");
 
         rotate();
+
+        // pulse 
+        $('.jke-ecgChart').ecgChart({
+            // height equal to footer height
+            height: 100,
+            width: 400
+        });
+        startPulse();
     }, 4000);
 
     

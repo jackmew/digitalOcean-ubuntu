@@ -1,5 +1,4 @@
-(function ($) {
-	'use strict';
+
 
 	// A list of data point samples for one beat.
 	var _data = [
@@ -40,9 +39,13 @@
 	var heartRate = 60; // bpm
 	var interval = 60 * 1000 / (_data.length * heartRate);
 
-	// Generate a new data point based on the heart rate.
-	setInterval(function () {
-		$('.jke-ecgChart').ecgChart('addDataPoint', getDataPoint());
-	}, interval);
 
-})($);
+
+	function startPulse() {
+		// Generate a new data point based on the heart rate.
+		setInterval(function () {
+			$('.jke-ecgChart').ecgChart('addDataPoint', getDataPoint());
+		}, interval);
+	}; 
+
+
