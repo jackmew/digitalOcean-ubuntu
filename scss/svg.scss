@@ -39,8 +39,8 @@ svg{
 
 	transform-origin: center;
 	-webkit-animation:spin-reverse 256s linear infinite;
-    -moz-animation:spin-reverse 256s linear infinite;
-    animation:spin-reverse 256s linear infinite;
+  -moz-animation:spin-reverse 256s linear infinite;
+  animation:spin-reverse 256s linear infinite;
 }
 
 /**************** z-circle ****************/
@@ -140,7 +140,6 @@ svg{
  left:0;
  right:0;
  margin:auto;
- 
 }
 
 #smallDottedCircle {
@@ -198,10 +197,10 @@ svg{
 }
 /* < 480px */
 .typing-panel {
-	zoom: 75%;
+	zoom: 75%
 }
 .rotate-panel {
-	zoom: 50%;
+	zoom: 50%; 
 }
 /* >480px & <600px */
 @media all and (min-width: 480px) {
@@ -216,9 +215,10 @@ svg{
 @media all and (min-width: 600px) {
 	.typing-panel {
 		zoom: 100%;
+         
 	}
 	.rotate-panel {
-		zoom: 100%;
+		zoom: 100%;    
 	}
 }
 

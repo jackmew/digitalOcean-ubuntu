@@ -1,4 +1,21 @@
 $(function() {
+    // solve firefox not support zoom problem
+    if( navigator.userAgent.toLowerCase().indexOf('firefox') > -1 ){
+        // typing
+        $(".typing-panel h1").css("font-size","24px");
+        $(".typing-panel p").css("font-size","12px");
+        // rotate z
+        $("svg").width("150pt");
+        $("svg").height("150pt");
+        $("#smallDottedCircle").width("150px");
+        $("#smallDottedCircle").height("150px");
+        $(".dottedCircle").width("225px");
+        $(".dottedCircle").height("225px");
+        $(".ringLong").width("235px");
+        $(".ringLong").height("235px");
+        $(".ringPiece").width("300px");
+        $(".ringPiece").height("300px");
+    }
 
 
     var borderPath = document.querySelector('#z-border');
@@ -30,4 +47,7 @@ $(function() {
 
         rotate();
     }, 4000);
+
+    
+
 });
