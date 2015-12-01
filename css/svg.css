@@ -1,8 +1,4 @@
-body {
-  overflow-x: hidden;
-  overflow-y: hidden; }
-
-svg {
+#z-svg {
   position: absolute;
   top: 0;
   bottom: 0;
