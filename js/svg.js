@@ -1,5 +1,5 @@
 $(function() {
-    // solve firefox not support zoom problem
+    // firefox not support zoom
     if( navigator.userAgent.toLowerCase().indexOf('firefox') > -1 ){
         // typing
         $(".typing-panel h1").css("font-size","24px");
@@ -15,6 +15,10 @@ $(function() {
         $(".ringLong").height("235px");
         $(".ringPiece").width("300px");
         $(".ringPiece").height("300px");
+        // firefox not support svg transform-origin..
+        setTimeout(function() {
+            $("#z-border").hide();
+        }, 4000);
     }
 
 
