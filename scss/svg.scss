@@ -14,7 +14,7 @@ svg{
 }
 .z-border-showing {
 	fill:none;
-	stroke: black ;
+	stroke: white ;
 	stroke-width: 30px;
 	stroke-dasharray: 37000;
 	stroke-dashoffset: 0;
@@ -30,11 +30,13 @@ svg{
     stroke-dashoffset: 0;
   }
   100% {
+    stroke: black ;
   	fill: black ;
     stroke-dashoffset: 0;
   }
 }
 .z-border-spin {
+  stroke: black ;
 	fill: black ;
 
 	transform-origin: center;
@@ -47,7 +49,7 @@ svg{
 #z-circle {
 	 fill:none;
 	 stroke: #14B7FA ;
-	 stroke-width: 3px;
+	 stroke-width: 12px;
 	 stroke-dasharray: 1000;
 	 stroke-dashoffset: 0;
 	 animation: 4s z-circle forwards;
