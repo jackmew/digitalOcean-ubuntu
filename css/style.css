@@ -12215,11 +12215,6 @@ button.close {
 }
 
 /* line 1, ../sass/_base.scss */
-* {
-  margin: 0;
-}
-
-/* line 4, ../sass/_base.scss */
 html, body {
   width: 100%;
   height: 100%;
@@ -12228,49 +12223,55 @@ html, body {
   overflow-y: hidden;
 }
 
-/* line 12, ../sass/_base.scss */
+/* line 9, ../sass/_base.scss */
 .content {
   min-height: 100%;
   /* equal to footer height */
   margin-bottom: -100px;
 }
 
-/* line 17, ../sass/_base.scss */
+/* line 14, ../sass/_base.scss */
 .content:after {
   content: "";
   display: block;
 }
 
-/* line 21, ../sass/_base.scss */
+/* line 18, ../sass/_base.scss */
 .footer, .content:after {
   /* .push must be the same height as footer */
   height: 100px;
 }
 
-/* line 25, ../sass/_base.scss */
+/* line 22, ../sass/_base.scss */
 .footer {
   background-color: #171d25;
 }
 
-@keyframes pulse {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.8;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-/* line 19, ../sass/home/_typing.scss */
+/* line 1, ../sass/home/_typing.scss */
 .cursor:after {
   content: "_";
   opacity: 0;
-  animation: cursor 1s infinite;
+  animation: typingCursor 1s infinite;
 }
 
-@keyframes cursor {
+/* line 6, ../sass/home/_typing.scss */
+.typing-panel {
+  margin: 20px;
+}
+
+/* line 9, ../sass/home/_typing.scss */
+.typing-panel h1, .typing-panel p {
+  font-family: "Megrim";
+  animation: typingPulse .9s infinite;
+  color: #00ebd4;
+}
+
+/* line 14, ../sass/home/_typing.scss */
+.typing-message {
+  padding-left: 45px;
+}
+
+@keyframes typingCursor {
   0% {
     opacity: 0;
   }
@@ -12287,23 +12288,17 @@ html, body {
     opacity: 0;
   }
 }
-/* line 43, ../sass/home/_typing.scss */
-.typing-panel {
-  margin: 20px;
+@keyframes typingPulse {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+  }
 }
-
-/* line 46, ../sass/home/_typing.scss */
-.typing-panel h1, .typing-panel p {
-  font-family: "Megrim";
-  animation: pulse .9s infinite;
-  color: #00ebd4;
-}
-
-/* line 51, ../sass/home/_typing.scss */
-.typing-message {
-  padding-left: 45px;
-}
-
 /* line 1, ../sass/home/_svg.scss */
 #z-svg {
   position: absolute;
@@ -12347,18 +12342,17 @@ html, body {
 .z-border-spin {
   stroke: black;
   fill: black;
-  transform-origin: center;
-  -webkit-transform-origin: center;
-  -moz-transform-origin: center;
-  -ms-transform-origin: center;
-  -webkit-animation: spin-reverse 256s linear infinite;
-  -moz-animation: spin-reverse 256s linear infinite;
-  -ms-animation: spin-reverse 256s linear infinite;
-  animation: spin-reverse 256s linear infinite;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-animation: spin-reverse 128s linear infinite;
+  -o-animation: spin-reverse 128s linear infinite;
+  animation: spin-reverse 128s linear infinite;
 }
 
 /**************** z-circle ****************/
-/* line 55, ../sass/home/_svg.scss */
+/* line 48, ../sass/home/_svg.scss */
 #z-circle {
   fill: none;
   stroke: #14B7FA;
@@ -12367,7 +12361,7 @@ html, body {
   stroke-dashoffset: 0;
 }
 
-/* line 63, ../sass/home/_svg.scss */
+/* line 56, ../sass/home/_svg.scss */
 .z-circle-Anim {
   animation: 4s z-circle forwards;
 }
@@ -12387,12 +12381,12 @@ html, body {
   }
 }
 /**************** z-letter ****************/
-/* line 81, ../sass/home/_svg.scss */
+/* line 74, ../sass/home/_svg.scss */
 #z-letter {
   cursor: pointer;
 }
 
-/* line 84, ../sass/home/_svg.scss */
+/* line 77, ../sass/home/_svg.scss */
 .z-letter-showing {
   stroke: #00ebd4;
   stroke-width: 30px;
@@ -12401,10 +12395,10 @@ html, body {
   animation: 8s z-letter forwards;
 }
 
-/* line 91, ../sass/home/_svg.scss */
+/* line 84, ../sass/home/_svg.scss */
 .z-letter-pulse {
   fill: #00ebd4;
-  animation: pulse .9s infinite;
+  animation: svgPulse .9s infinite;
 }
 
 @keyframes z-letter {
@@ -12421,7 +12415,7 @@ html, body {
     stroke-dashoffset: 0;
   }
 }
-@keyframes pulse {
+@keyframes svgPulse {
   0% {
     fill-opacity: 0.8;
   }
@@ -12449,24 +12443,24 @@ html, body {
   }
 }
 /* images */
-/* line 141, ../sass/home/_svg.scss */
+/* line 134, ../sass/home/_svg.scss */
 .hideCircleDiv {
   display: block;
   transform: scale(0);
   opacity: 0;
 }
 
-/* line 146, ../sass/home/_svg.scss */
+/* line 139, ../sass/home/_svg.scss */
 .popShow {
   animation: animPopDisplay .3s ease-in-out;
 }
 
-/* line 149, ../sass/home/_svg.scss */
+/* line 142, ../sass/home/_svg.scss */
 .popHide {
   animation: animPopHidden .3s forwards;
 }
 
-/* line 152, ../sass/home/_svg.scss */
+/* line 145, ../sass/home/_svg.scss */
 .center {
   position: absolute;
   top: 0;
@@ -12476,59 +12470,55 @@ html, body {
   margin: auto;
 }
 
-/* line 161, ../sass/home/_svg.scss */
+/* line 154, ../sass/home/_svg.scss */
 #smallDottedCircle {
   width: 300px;
   height: 300px;
-  transform-origin: center;
-  -webkit-transform-origin: center;
-  -moz-transform-origin: center;
-  -ms-transform-origin: center;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
   -webkit-animation: spin 128s linear infinite;
-  -moz-animation: spin 128s linear infinite;
-  -ms-animation: spin-reverse 128s linear infinite;
+  -o-animation: spin 128s linear infinite;
+  animation: spin 128s linear infinite;
+}
+
+/* line 161, ../sass/home/_svg.scss */
+.dottedCircle {
+  width: 450px;
+  height: 450px;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-animation: spin-reverse 128s linear infinite;
+  -o-animation: spin-reverse 128s linear infinite;
+  animation: spin-reverse 128s linear infinite;
+}
+
+/* line 168, ../sass/home/_svg.scss */
+.ringLong {
+  width: 470px;
+  height: 470px;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-animation: spin 128s linear infinite;
+  -o-animation: spin 128s linear infinite;
   animation: spin 128s linear infinite;
 }
 
 /* line 175, ../sass/home/_svg.scss */
-.dottedCircle {
-  width: 450px;
-  height: 450px;
-  transform-origin: center;
-  -webkit-transform-origin: center;
-  -moz-transform-origin: center;
-  -ms-transform-origin: center;
-  -webkit-animation: spin-reverse 128s linear infinite;
-  -moz-animation: spin-reverse 128s linear infinite;
-  -ms-animation: spin-reverse 128s linear infinite;
-  animation: spin-reverse 128s linear infinite;
-}
-
-/* line 189, ../sass/home/_svg.scss */
-.ringLong {
-  width: 470px;
-  height: 470px;
-  transform-origin: center;
-  -webkit-transform-origin: center;
-  -moz-transform-origin: center;
-  -ms-transform-origin: center;
-  -webkit-animation: spin 128s linear infinite;
-  -moz-animation: spin 128s linear infinite;
-  -ms-animation: spin-reverse 128s linear infinite;
-  animation: spin 128s linear infinite;
-}
-
-/* line 203, ../sass/home/_svg.scss */
 .ringPiece {
   width: 600px;
   height: 600px;
-  transform-origin: center;
-  -webkit-transform-origin: center;
-  -moz-transform-origin: center;
-  -ms-transform-origin: center;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
   -webkit-animation: spin 128s linear infinite;
-  -moz-animation: spin 128s linear infinite;
-  -ms-animation: spin-reverse 128s linear infinite;
+  -o-animation: spin 128s linear infinite;
   animation: spin 128s linear infinite;
 }
 
@@ -12540,69 +12530,69 @@ html, body {
   1% {
     display: block;
     opacity: 0;
-    transform: scale(0);
     -webkit-transform: scale(0);
-    -moz-transform: scale(0);
     -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
   }
   100% {
     display: block;
     opacity: 1;
-    transform: scale(1);
     -webkit-transform: scale(1);
-    -moz-transform: scale(1);
     -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
   }
 }
 @keyframes animPopHidden {
   0% {
     display: block;
     opacity: 1;
-    transform: scale(1);
     -webkit-transform: scale(1);
-    -moz-transform: scale(1);
     -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
   }
   100% {
     display: none;
     opacity: 0;
-    transform: scale(0);
     -webkit-transform: scale(0);
-    -moz-transform: scale(0);
     -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
   }
 }
 /* < 480px */
-/* line 259, ../sass/home/_svg.scss */
+/* line 212, ../sass/home/_svg.scss */
 .typing-panel {
   zoom: 75%;
 }
 
-/* line 262, ../sass/home/_svg.scss */
+/* line 215, ../sass/home/_svg.scss */
 .rotate-panel {
   zoom: 50%;
 }
 
 /* >480px & <600px */
 @media all and (min-width: 480px) {
-  /* line 267, ../sass/home/_svg.scss */
+  /* line 220, ../sass/home/_svg.scss */
   .typing-panel {
     zoom: 85%;
   }
 
-  /* line 270, ../sass/home/_svg.scss */
+  /* line 223, ../sass/home/_svg.scss */
   .rotate-panel {
     zoom: 70%;
   }
 }
 /* >600px */
 @media all and (min-width: 600px) {
-  /* line 276, ../sass/home/_svg.scss */
+  /* line 229, ../sass/home/_svg.scss */
   .typing-panel {
     zoom: 100%;
   }
 
-  /* line 280, ../sass/home/_svg.scss */
+  /* line 233, ../sass/home/_svg.scss */
   .rotate-panel {
     zoom: 100%;
   }

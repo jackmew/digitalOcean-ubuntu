@@ -1,11 +1,11 @@
-$jke-ecgChart-axisColor: rgb(23, 29, 37);
+$jke-ecgChart-axisColor: $bgColor;
 
-$jke-ecgChart-backgroundColor: rgb(23, 29, 37);
+$jke-ecgChart-backgroundColor: $bgColor;
 
-$jke-ecgChart-xGridColor: rgb(23, 29, 37);
-$jke-ecgChart-yGridColor: rgb(23, 29, 37);
+$jke-ecgChart-xGridColor: $bgColor;
+$jke-ecgChart-yGridColor: $bgColor;
 
-$jke-ecgChart-lineColor: #00ebd4 ;
+$jke-ecgChart-lineColor: $majorColor ;
 
 .jke-ecgChart {
 	margin-left: -15px;
