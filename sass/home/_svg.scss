@@ -7,6 +7,7 @@
   margin:auto;
   width: 300pt;
   height: 300pt;
+  z-index: 9999;
 }
 /**************** z-border ****************/
 #z-border {
@@ -57,7 +58,10 @@
 	 stroke-width: 12px;
 	 stroke-dasharray: 1000;
 	 stroke-dashoffset: 0;
-	 animation: 4s z-circle forwards;
+	 
+}
+.z-circle-Anim {
+  animation: 4s z-circle forwards;
 }
 @keyframes z-circle {
   0% {
@@ -75,7 +79,7 @@
 }
 /**************** z-letter ****************/
 #z-letter {
-	
+	cursor: pointer;
 }
 .z-letter-showing {
 	 stroke: #00ebd4 ;
@@ -139,8 +143,11 @@
   transform: scale(0);
   opacity: 0;
 }
-.good {
-	animation: anim .3s ease-in-out;
+.popShow {
+	animation: animPopDisplay .3s ease-in-out;
+}
+.popHide {
+  animation: animPopHidden .3s forwards;
 }
 .center {
  position:absolute;
@@ -208,7 +215,7 @@
   animation:spin 128s linear infinite;
 }
 
-@keyframes anim {
+@keyframes animPopDisplay {
   0% {
     display: none;
     opacity: 0;
@@ -228,6 +235,24 @@
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
     -ms-transform: scale(1);
+  }
+}
+@keyframes animPopHidden {
+  0% {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+  }
+  100% {
+    display: none;
+    opacity: 0;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
   }
 }
 /* < 480px */

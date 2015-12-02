@@ -1,0 +1,20 @@
+// style.scss
+// ==============
+ 
+//Compass imports
+@import "compass";
+@import "compass/reset";
+@import "compass/css3";
+
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "bower_components/font-awesome/scss/font-awesome";
+//Core partials
+//@import "variables";
+//@import "mixins";
+@import "base";
+//@import "modules";
+ 
+// JS partials
+@import "home/typing";
+@import "home/svg";
+@import "home/pulse"

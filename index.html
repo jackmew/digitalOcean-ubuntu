@@ -9,14 +9,10 @@
     <meta name="author" content="zestlifia">
     <title>Zestlifia Ocean</title>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="css/typing.css" rel="stylesheet">
-    <link href="css/svg.css" rel="stylesheet">
-    <link href="css/pulse.css" rel="stylesheet">
-    <script src="js/lib/jquery.js"></script>
+    <!-- bootstrap -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
     <!-- pulse -->
     <script src="js/lib/jquery-ui-widget.min.js"></script>
     <script src="js/lib/d3.min.js"></script>
@@ -58,6 +54,13 @@
 
 <!-- rotate Z -->
 <div class="rotate-panel">
+    <div id="circleDiv" class="hideCircleDiv center">
+        <img id="smallDottedCircle" src="img/dottedCircle.svg" class="center">
+        <img src="img/dottedCircle.svg" class="center dottedCircle">
+        <img src="img/ringLong.png" class="center ringLong">
+        <img src="img/ringPiece.png" class="center ringPiece">
+    </div>
+
     <svg id="z-svg" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 567.000000 567.000000"
      preserveAspectRatio="xMidYMid meet">
         <metadata>
@@ -79,7 +82,7 @@
         -403 -402 -402 0 -573 0 -572 -572 0 -573 0 -402 -402 -403 -403 -403 403
         -402 402 -573 0 -572 0 0 572 0 573 -402 402 -403 403 403 403 402 402 0 573
         0 572 573 0 572 0 400 400 c220 220 402 400 405 400 3 0 185 -180 405 -400z"/>
-        <path id="z-circle" d="M2626 4819 c-369 -39 -752 -199 -1046 -436 -89 -72 -257 -243 -321
+        <path id="z-circle" class="z-circle-Anim" d="M2626 4819 c-369 -39 -752 -199 -1046 -436 -89 -72 -257 -243 -321
         -328 -407 -533 -525 -1217 -318 -1850 101 -307 273 -580 510 -810 168 -162
         316 -266 521 -365 682 -329 1486 -245 2093 219 85 64 256 232 328 321 583 722
         595 1743 28 2485 -64 85 -232 256 -321 328 -411 332 -950 491 -1474 436z m405
@@ -95,16 +98,6 @@
         -11z"/>
         </g>
     </svg>
-
-
-    <div id="circleDiv" class="hideCircleDiv center">
-        <img id="smallDottedCircle" src="img/dottedCircle.svg" class="center">
-        <img src="img/dottedCircle.svg" class="center dottedCircle">
-        <img src="img/ringLong.png" class="center ringLong">
-        <img src="img/ringPiece.png" class="center ringPiece">
-    </div>
-
-
 
 </div><!-- end rotate z-->
 

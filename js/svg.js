@@ -25,7 +25,7 @@ $(function() {
     setTimeout(function() {
     
         $("#circleDiv").removeClass("hideCircleDiv");
-        $("#circleDiv").addClass("good");
+        $("#circleDiv").addClass("popShow");
 
         rotate();
 
@@ -38,6 +38,24 @@ $(function() {
         startPulse();
     }, 4000);
 
-    
+    var isZLetterVisible = true ;
+
+    $('#z-letter').click(function() {
+        if(isZLetterVisible) {
+            $("#circleDiv").removeClass("popShow");
+            $("#circleDiv").addClass("popHide");
+
+            $("#z-circle").removeClass("z-circle-Anim");
+            $("#z-circle").addClass("animPopHidden");
+        } 
+        else {
+            $("#circleDiv").removeClass("popHide");
+            $("#circleDiv").addClass("popShow");
+
+            $("#z-circle").removeClass("popHide");
+            $("#z-circle").addClass("z-circle-Anim");
+        }
+        isZLetterVisible = !isZLetterVisible ;
+    });
 
 });

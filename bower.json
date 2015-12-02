@@ -1,0 +1,20 @@
+{
+  "name": "ubuntu-home",
+  "version": "0.0.1",
+  "homepage": "https://github.com/jackmew/digitalOcean-ubuntu",
+  "authors": [
+    "Zestlifia <wonderfuljack123@gmail.com>"
+  ],
+  "description": "ubuntu zestlifia",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.6",
+    "font-awesome": "fontawesome#~4.5.0"
+  }
+}
