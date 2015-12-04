@@ -1,0 +1,17 @@
+$jke-ecgChart-axisColor: $bgColor;
+
+$jke-ecgChart-backgroundColor: $bgColor;
+
+$jke-ecgChart-xGridColor: $bgColor;
+$jke-ecgChart-yGridColor: $bgColor;
+
+$jke-ecgChart-lineColor: $majorColor ;
+
+
+
+.jke-ecgChart {
+	margin-left: -15px;
+	margin-top: -10px;
+}
+
+@import "src/jke-d3-ecg";

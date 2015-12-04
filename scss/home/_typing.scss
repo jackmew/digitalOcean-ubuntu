@@ -1,0 +1,46 @@
+.cursor:after {
+  content:"_";
+  opacity: 0;
+  animation: typingCursor 1s infinite;
+}
+.typing-panel {
+  margin: 20px;
+  height: 150px;
+}
+.typing-panel h1 , .typing-panel p {
+   font-weight: bold;
+   font-family: $typingFont;
+   animation: typingPulse .9s infinite;
+   color: $majorColor;
+}
+.typing-message {
+  line-height: 100%;
+}
+@keyframes typingCursor {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes typingPulse {
+   0% {
+    opacity: 0.8;
+  }
+   50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}

@@ -1,0 +1,264 @@
+@mixin zestlifia-tranform-origin-center() {
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+}
+@mixin zestlifia-spin-reverse($sec) {
+  -webkit-animation: spin-reverse $sec linear infinite;
+  -moz-animation: spin-reverse $sec linear infinite;
+  -ms-animation: spin-reverse $sec linear infinite;
+  animation: spin-reverse $sec linear infinite;
+}
+@mixin zestlifia-spin($sec) {
+  -webkit-animation: spin $sec linear infinite;
+  -moz-animation: spin $sec linear infinite;
+  -ms-animation: spin $sec linear infinite;
+  animation: spin $sec linear infinite;
+}
+@mixin zestlifia-scale($scale) {
+  -webkit-transform: scale($scale);
+  -moz-transform: scale($scale);
+  -ms-transform: scale($scale);
+  transform: scale($scale);
+}
+@mixin zestlifia-rotateZ($rotateZ) { 
+  -webkit-transform: rotateZ($rotateZ);
+  -moz-transform:rotateZ($rotateZ);
+  -ms-transform:rotateZ($rotateZ);
+  transform: rotateZ($rotateZ)
+}
+#z-svg {
+  width: 300pt;
+  height: 300pt;
+}
+/**************** z-border ****************/
+#z-border {
+
+}
+.z-border-showing {
+	fill:none;
+	stroke: white ;
+	stroke-width: 30px;
+	stroke-dasharray: 37000;
+	stroke-dashoffset: 0;
+	animation: 4s z-border linear;
+}
+@keyframes z-border {
+  from {
+    stroke: white ;
+    fill: none;
+    stroke-dashoffset: 37000;
+  }
+  to {
+    stroke: black ;
+    fill: black ;
+    stroke-dashoffset: 0;
+  }
+}
+.z-border-spin {
+  stroke: black ;
+	fill: black ;
+
+  @include zestlifia-tranform-origin-center();
+  @include zestlifia-spin-reverse(128s)
+}
+
+/**************** z-circle ****************/
+#z-circle {
+	 fill:none;
+	 stroke: #14B7FA ;
+	 stroke-width: 12px;
+	 stroke-dasharray: 1000;
+	 stroke-dashoffset: 0;
+	 
+}
+.z-circle-Anim {
+  animation: 4s z-circle forwards;
+}
+@keyframes z-circle {
+  from {
+    fill: none;
+    stroke-dashoffset: 24800;
+  }
+  to {
+    fill: #14B7FA ;
+    stroke-dashoffset: 0;
+  }
+  // 0% {
+  //   fill: none;
+  //   stroke-dashoffset: 24800;
+  // }
+  // 80% {
+  // 	fill: none;
+  //   stroke-dashoffset: 0;
+  // }
+  // 100% {
+  // 	fill: #14B7FA ;
+  //   stroke-dashoffset: 0;
+  // }
+}
+/**************** z-letter ****************/
+#z-letter {
+	cursor: pointer;
+}
+.z-letter-showing {
+	 stroke: #00ebd4 ;
+	 stroke-width: 30px;
+	 stroke-dasharray: 19150;
+	 stroke-dashoffset: 0;
+	 animation: 8s z-letter forwards;
+}
+.z-letter-pulse {
+	fill: #00ebd4;
+	animation: svgPulse .9s infinite;
+}
+@keyframes z-letter {
+  // from {
+  //   fill: none;
+  //   stroke-dashoffset: 19150;
+  // }
+  // to {
+  //   fill: #00ebd4;
+  //   stroke-dashoffset: 0;
+  // }
+  0% {
+    fill: none;
+    stroke-dashoffset: 19150;
+  }
+  30% {
+  	fill: none;
+    stroke-dashoffset: 0;
+  }
+  100% {
+  	fill: #00ebd4;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes svgPulse {
+   0% {
+    fill-opacity: 0.5;
+  }
+   50% {
+    fill-opacity: 1;
+  }
+  100% {
+    fill-opacity: 0.5;
+  }
+}
+
+
+@keyframes spin-reverse {
+	100% { 
+    @include zestlifia-rotateZ(-360deg);
+	} 
+}
+@keyframes spin { 
+	100% { 
+    @include zestlifia-rotateZ(360deg);
+	} 
+}
+
+/* images */
+.hideCircleDiv {
+  display: block;
+  transform: scale(0);
+  opacity: 0;
+}
+.popShow {
+	animation: animPopDisplay .3s forwards;
+}
+.popHide {
+  animation: animPopHidden .3s forwards;
+}
+#smallDottedCircle {
+  //margin-top: 50px;
+	width: 300px;
+	height: 300px;
+
+  @include zestlifia-tranform-origin-center();
+  @include zestlifia-spin(128s)
+}
+#dottedCircle {
+	width: 450px;
+	height: 450px;
+
+  @include zestlifia-tranform-origin-center();
+  @include zestlifia-spin-reverse(128s)
+}
+#ringLong {
+
+	width: 470px;
+	height: 470px;
+
+  @include zestlifia-tranform-origin-center();
+  @include zestlifia-spin(128s)
+}
+#ringPiece{
+
+	width: 600px;
+	height: 600px;
+
+  @include zestlifia-tranform-origin-center();
+  @include zestlifia-spin(128s)
+}
+
+@keyframes animPopDisplay {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+    @include zestlifia-scale(0);
+  }
+  100% {
+  	display: block;
+    opacity: 1;
+    @include zestlifia-scale(1);
+  }
+}
+@keyframes animPopHidden {
+  0% {
+    display: block;
+    opacity: 1;
+    @include zestlifia-scale(1);
+  }
+  100% {
+    display: none;
+    opacity: 0;
+    @include zestlifia-scale(0);
+  }
+}
+/* < 480px */
+.typing-panel {
+	zoom: 75%
+}
+.rotate-panel {
+	zoom: 50%; 
+}
+/* >480px & <600px */
+@media all and (min-width: 480px) {
+	.typing-panel {
+		zoom: 85%;
+	}
+	.rotate-panel {
+		zoom: 70%;
+	}
+}
+/* >600px */
+@media all and (min-width: 600px) {
+	.typing-panel {
+		zoom: 100%;
+         
+	}
+	.rotate-panel {
+		zoom: 100%;    
+	}
+}
+
+
+
+

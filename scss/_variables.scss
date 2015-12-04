@@ -1,0 +1,44 @@
+// _variables.scss
+// =================
+// zestlifia
+$bgColor: rgb(23, 29, 37);
+$majorColor: #00ebd4;
+// override ionic
+// view content
+$dark:							  rgb(23, 29, 37) !default;
+$base-background-color:           $dark !default;
+$base-color:                      #00ebd4 !default;
+// bar button - stable
+$stable:						  $dark !default;
+$button-stable-bg:                $stable !default;
+$button-stable-text:              $base-color !default;
+$button-stable-border:            $dark !default;
+$button-stable-active-bg:         #e5e5e5 !default;
+$button-stable-active-border:     #a2a2a2 !default;
+
+// home-typing
+@import url(https://fonts.googleapis.com/css?family=Megrim);
+$typingFont: "Megrim";
+
+
+
+// override bar-header title with titlePulse
+.bar-header .title {
+   color: $majorColor;
+   font-size: 30px !important;
+   //font-weight: 1000 !important;
+   font-family: $typingFont;
+
+   animation: titlePulse .9s infinite;
+}
+@keyframes titlePulse {
+   0% {
+    opacity: 0.8;
+  }
+   50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
