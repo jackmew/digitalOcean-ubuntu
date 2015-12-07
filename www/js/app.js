@@ -17,6 +17,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
     url: '/tests',
     templateUrl: 'templates/tests.html',
   });
+  $stateProvider.state('logbook', {
+    url: '/logbook',
+    templateUrl: 'templates/logbook.html'
+  });
   $urlRouterProvider.otherwise('/home');
 });
 app.controller('HomeCtrl', function($scope, $timeout) {

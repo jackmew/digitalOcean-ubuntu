@@ -1,12 +1,13 @@
 // _variables.scss
 // =================
 // zestlifia
-$bgColor: rgb(23, 29, 37);
+// $bgColor: rgb(23, 29, 37);
+$bgColor: #11161C;
 $majorColor: #00ebd4;
 // override ionic
 // view content
-$dark:							  rgb(23, 29, 37) !default;
-$base-background-color:           $dark !default;
+$dark:							  $bgColor !default;
+$base-background-color:           $bgColor !default;
 $base-color:                      #00ebd4 !default;
 // bar button - stable
 $stable:						  $dark !default;
@@ -31,6 +32,32 @@ $typingFont: "Megrim";
 
    animation: titlePulse .9s infinite;
 }
+// override side-menu
+ion-side-menu {
+  ion-content {
+    background-color: lighten($bgColor, 1%);
+  
+  }
+  .item {
+    background-color: lighten($bgColor, 1%) !important ;
+    background-color: $bgColor;
+
+    border-color: rgb(44, 44, 44) !important ;
+
+    .item-content {
+      background-color: lighten($bgColor, 1%) !important ;
+      color: $majorColor;
+      font-family: $typingFont;
+      animation: titlePulse .9s infinite;
+         
+      &:hover {
+        border-bottom-width: 1px!important ;
+        border-bottom-style: solid!important ;
+      }
+    }
+  }
+}
+
 @keyframes titlePulse {
    0% {
     opacity: 0.8;
