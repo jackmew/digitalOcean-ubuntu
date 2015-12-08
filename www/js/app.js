@@ -21,6 +21,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
     url: '/logbook',
     templateUrl: 'templates/logbook.html'
   });
+  $stateProvider.state('book', {
+    url: '/book/:bookId',
+    templateUrl: 'templates/book.html'
+  });
   $urlRouterProvider.otherwise('/home');
 });
 app.controller('HomeCtrl', function($scope, $timeout) {
@@ -50,8 +54,29 @@ app.controller('HomeCtrl', function($scope, $timeout) {
   }, 4000);
 
 });
-app.controller('TestCtrl',function($scope) {
-
+app.controller('LogbookCtrl',function($scope, $http) {
+    $scope.books = [];
+    $http.get('https://www.reddit.com/r/Android/new/.json')
+      .success(function(response) {
+      angular.forEach(response.data.children, function(child) {
+          var story = child.data ;
+          console.log(story.thumbnail);
+          if(!story.thumbnail || story.thumbnail === 'self' || story.thumbnail == 'default') {
+            story.thumbnail = 'http://www.redditstatic.com/icon.png' ;
+          }
+          $scope.books.push(child.data);
+      });
+    });
+    // $scope.openBook = function(title) {
+    //   alert(title);
+    // };
+});
+app.controller('BookCtrl', function($scope, $state) {
+  console.log($state.params);
+  $scope.bookId = $state.params.bookId;
+  // var bookId = '1234';
+  // alert(bookId);
+  // $scope.bookId = bookId;
 });
 
 app.run(function($ionicPlatform) {
