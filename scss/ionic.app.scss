@@ -27,9 +27,12 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "www/bower_components/font-awesome/scss/font-awesome";
 // zestlifia
 @import "scss/basic";
+// home
 @import "scss/home/typing";
 @import "scss/home/svg";
 @import "scss/home/pulse";
+// book
+@import "scss/logbook/book";
 
 .zButton {
 	color: red;
@@ -74,10 +77,6 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     -o-transition: all 1s ease-in-out;
     transition: all 1s ease-in-out;
 }
-
-
-
-
 
 
 

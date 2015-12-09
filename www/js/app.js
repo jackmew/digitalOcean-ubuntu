@@ -72,7 +72,7 @@ app.controller('LogbookCtrl',function($scope, $http) {
     // };
 });
 app.controller('BookCtrl', function($scope, $state) {
-  console.log($state.params);
+  console.log($state.params.bookId);
   $scope.bookId = $state.params.bookId;
   // var bookId = '1234';
   // alert(bookId);

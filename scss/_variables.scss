@@ -57,7 +57,23 @@ ion-side-menu {
     }
   }
 }
+footer {
+  position:relatvie; 
+  div {
+    position:absolute; 
+    left:0 ; 
+    right:0; 
+    margin: 0 auto; 
+    width: 338px;
+    padding: 10px;
+    border: 1px solid ;
 
+    background-color: lighten($bgColor, 1%) !important ;
+    color: $majorColor;
+    font-family: $typingFont;
+    animation: titlePulse .9s infinite;
+  }
+}
 @keyframes titlePulse {
    0% {
     opacity: 0.8;

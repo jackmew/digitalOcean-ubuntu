@@ -38,6 +38,21 @@ ion-side-menu .item {
       border-bottom-width: 1px !important;
       border-bottom-style: solid !important; }
 
+footer {
+  position: relatvie; }
+  footer div {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 338px;
+    padding: 10px;
+    border: 1px solid;
+    background-color: #13181f !important;
+    color: #00ebd4;
+    font-family: "Megrim";
+    animation: titlePulse .9s infinite; }
+
 @keyframes titlePulse {
   0% {
     opacity: 0.8; }
@@ -11491,6 +11506,88 @@ a.button {
   fill: none;
   stroke: #00ebd4;
   stroke-width: 1px; }
+
+article h1, article h2, article h3, article h4, article h5, article p, article span, article ul, article li {
+  color: white; }
+
+article ul {
+  padding-left: 20px; }
+  article ul li {
+    list-style: disc; }
+
+.titleSection {
+  position: relatvie; }
+  .titleSection div {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100px;
+    margin: 0 auto;
+    width: 75%;
+    text-align: center; }
+  .titleSection img {
+    opacity: 0.5;
+    width: 100%; }
+
+.contentSection {
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto; }
+
+@media all and (max-width: 767px) {
+  .contentSection {
+    width: auto;
+    margin-left: 20px;
+    margin-right: 20px; } }
+
+figure img {
+  width: 100%; }
+
+blockquote {
+  display: block;
+  padding: 15px 20px 15px 45px;
+  margin: 0 0 20px;
+  position: relative;
+  /*Font*/
+  font-family: Georgia, serif;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #666;
+  text-align: justify;
+  /*Borders - (Optional)*/
+  border-left: 15px solid #00ebd4;
+  border-right: 2px solid #00ebd4;
+  /*Box Shadow - (Optional)*/ }
+
+blockquote::before {
+  content: "\201C";
+  /*Unicode for Left Double Quote*/
+  /*Font*/
+  font-family: Georgia, serif;
+  font-size: 60px;
+  font-weight: bold;
+  color: #999;
+  /*Positioning*/
+  position: absolute;
+  left: 10px;
+  top: 5px; }
+
+blockquote::after {
+  /*Reset to make sure*/
+  content: ""; }
+
+blockquote a {
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0 3px;
+  color: #c76c0c; }
+
+blockquote a:hover {
+  color: #666; }
+
+blockquote em {
+  color: #00ebd4;
+  font-style: italic; }
 
 .zButton {
   color: red;
