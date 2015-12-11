@@ -11507,7 +11507,7 @@ a.button {
   stroke: #00ebd4;
   stroke-width: 1px; }
 
-.zestCard h2 {
+.zestCard h2, .zestCard h3 {
   color: #396f87; }
 
 .zestCard ion-item {

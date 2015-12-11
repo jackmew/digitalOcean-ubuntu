@@ -21,16 +21,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
     url: '/logbook',
     templateUrl: 'templates/logbook.html'
   });
-  $stateProvider.state('book', {
-    url: '/book/:bookId',
-    templateUrl: 'templates/book.html'
-  });
+  // $stateProvider.state('book', {
+  //   url: '/book/:bookId',
+  //   templateUrl: 'templates/book.html'
+  // });
   $stateProvider.state('cordova1', {
-    url: '/cordova1',
+    url: '/book/cordova1',
     templateUrl: 'templates/cordova1.html'
   });
   $stateProvider.state('cordova2', {
-    url: '/cordova2',
+    url: '/book/cordova2',
     templateUrl: 'templates/cordova2.html'
   });
   $urlRouterProvider.otherwise('/home');
