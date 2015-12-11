@@ -11507,6 +11507,24 @@ a.button {
   stroke: #00ebd4;
   stroke-width: 1px; }
 
+.zestCard h2 {
+  color: #396f87; }
+
+.zestCard ion-item {
+  border: none;
+  margin-top: 20px; }
+
+.zestCard .item-complex .item-content {
+  background-color: #242f3c; }
+
+.zestCard .zestCardLine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #00ebd4;
+  width: 100%;
+  height: 5px; }
+
 article h1, article h2, article h3, article h4, article h5, article p, article span, article ul, article li {
   color: white; }
 

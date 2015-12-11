@@ -1,3 +1,27 @@
+// browse cards
+.zestCard {
+  h2  {
+    color: rgb(57, 111, 135);
+  }
+  ion-item {
+    border:none;
+    margin-top:20px;
+  }
+  .item-complex .item-content {
+    background-color: lighten($bgColor, 10%);
+   // min-height: 200px;
+  }
+  .zestCardLine {
+    position:absolute;
+    top:0;
+    left:0;
+    background-color:#00ebd4;
+    width: 100%; 
+    height:5px;
+  }
+}
+
+// articles
 article {
   h1, h2, h3, h4, h5, p, span ,ul ,li {
     color: white;

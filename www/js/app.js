@@ -25,6 +25,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
     url: '/book/:bookId',
     templateUrl: 'templates/book.html'
   });
+  $stateProvider.state('cordova1', {
+    url: '/cordova1',
+    templateUrl: 'templates/cordova1.html'
+  });
+  $stateProvider.state('cordova2', {
+    url: '/cordova2',
+    templateUrl: 'templates/cordova2.html'
+  });
   $urlRouterProvider.otherwise('/home');
 });
 app.controller('HomeCtrl', function($scope, $timeout) {
@@ -67,9 +75,6 @@ app.controller('LogbookCtrl',function($scope, $http) {
           $scope.books.push(child.data);
       });
     });
-    // $scope.openBook = function(title) {
-    //   alert(title);
-    // };
 });
 app.controller('BookCtrl', function($scope, $state) {
   console.log($state.params.bookId);

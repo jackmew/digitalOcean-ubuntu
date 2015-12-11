@@ -1,25 +1,24 @@
 <ion-view view-title="Logbooks">
 	<ion-content ng-controller="LogbookCtrl" class="padding">
 		<!-- Daily / Command / Language -->
-		<ion-list>
-			<ion-item class="item-thumbnail-left" ng-repeat="book in books track by book.id" href="#/book/{{book.id}}">
-			    <img ng-src="{{book.thumbnail}}" ng-if="book.thumbnail.indexOf('http') === 0">
-			    <h2 class="book-title">{{book.title}}</h2>
+		<ion-list class="zestCard" style="">
+			<ion-item class="item-thumbnail-right" href="#/cordova1">
+			    <img ng-src="http://4.bp.blogspot.com/-i1maQG0pYmg/VbqHs_0APSI/AAAAAAAAB6c/pbLTnzmMPkU/s175/logo_android_studio_512dp.png" >
+			    <h2>Find the way to access android native API in Ionic part1 - Install Android Studio</h2>
 			    <p>
-			      <span>2015-12-08</span> - {{book.domain}}
+			      <span>2015-12-08</span> - www.zestlifia.tw
 			    </p>
+			    <div class="zestCardLine"></div>
+			</ion-item>
+
+			<ion-item class="item-thumbnail-right" href="#/cordova2">
+			    <img ng-src="https://camo.githubusercontent.com/a0fe95b9427fefe394531ad3fdd256bf2c617e6a/687474703a2f2f696f6e69636672616d65776f726b2e636f6d2f696d672f6e67636f72646f76612d636f6e746578742d6c6f676f2e706e67" >
+			    <h2>Find the way to access android native API in Ionic part2 - ngCordova</h2>
+			    <p>
+			      <span>2015-12-09</span> - www.zestlifia.tw
+			    </p>
+			    <div class="zestCardLine"></div>
 			</ion-item>
 		</ion-list>
-<!--		
-<div class="list">
-  <a class= "item item-thumbnail-left" ng-click="openLink(books.url)" ng-repeat="book in books track by book.id">
-    <img ng-src="{{book.thumbnail}}" ng-if="book.thumbnail.indexOf('http') === 0">
-    <h2 class="book-title">{{book.title}}</h2>
-    <p>
-      <span am-time-ago="book.created_utc" am-preprocess="unix"></span> - {{book.domain}}
-    </p>
-  </a>
-</div>
--->
 	</ion-content>
 </ion-view>
