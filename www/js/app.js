@@ -1,4 +1,4 @@
-var app = angular.module('starter', ['ionic']);
+var app = angular.module('starter', ['ionic','gist-embed']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider.state('home', {

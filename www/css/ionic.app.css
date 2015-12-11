@@ -11561,6 +11561,10 @@ article ul {
 figure img {
   width: 100%; }
 
+.sourceCodeLinkRight {
+  width: 100%;
+  text-align: right; }
+
 blockquote {
   display: block;
   padding: 15px 20px 15px 45px;
