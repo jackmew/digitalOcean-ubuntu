@@ -1,0 +1,68 @@
+<ion-view view-title="Book">
+	<ion-content ng-controller="BookCtrl">
+		<article>
+		<!-- 	<header>
+				<p>My header - {{bookId}} - 2015-12-09 </p>
+			</header> -->
+			<section class="titleSection">
+				<img src="https://dl.dropboxusercontent.com/u/47510080/zestlifia/logbook/intelliJ/intelliJ-header.png">
+				<div>
+					<h1>Coding with IntelliJ.</h1>
+				</div>
+			</section>
+			</br>
+			<section class="contentSection">
+				<h3>Why IntelliJ?</h3>
+				<p>
+					I use Eclipse a lot for developing JavaEE applications. After a period of coding time with Java, I found that I need to speed up my workflow. Coding with Java, the IDE always help you to find the problem and give you a hint, even more - a direction to help you solve the problem, and many other beneficial features - <a href="http://stackoverflow.com/questions/208193/why-should-i-use-an-ide">link</a>. But before executing Java program, you need to compile it, when you add Spring, Hibernate, and some other libraries, you need more time to compile it. Actually, in JavaEE, you need a web server/web container ex: Tomcat/JBoss/WebSphere, so the workflow will be : shut down the server, compile source code, restart server. In the beginning, this workflow spends 10 second, and later, it spends 30 second, and then 45 second ... and finally more then 1 minute. I lost my attention.
+				</p>
+				<p>
+					The workflow become a problem. I search the keyword about hot swap or hot deploy, I try to configure maven and tomcat to achieve hot swap, but it's not very effective way. Then, I found <a href="http://zeroturnaround.com/software/jrebel/">jRebel</a>. jRebel reloads changes immidiately to Java classes, resources, and skip the build and redeploy process. JRebel configuration is easy. In that time, only I need jRebel to do is support vaadin, and it works like a charm. But after I add Spring framework, it fails... I figure out it is the version problem. The version I got JRebel not supporting Spring.
+				</p>
+				<p>
+					Okay, I just need try another solution. Maybe another IDE ?
+				</p>
+				<h3>IntelliJ JavaEE Settings</h3>
+				<p>
+					Maven
+				</p>
+				<figure>
+					<img src="https://dl.dropboxusercontent.com/u/47510080/zestlifia/logbook/intelliJ/mavenSetting.png" alt="mavenSetting">
+				</figure>
+				<p>
+					Tomcat - <a href="https://www.youtube.com/watch?v=MPfXbRTlydc">Create a JavaEE Web Profile Project in intelliJ</a>
+				</p>
+				<p> 
+					Hot Swap Settings - 
+					<a href="http://stackoverflow.com/questions/19596779/intellij-and-tomcat-changed-files-are-not-automatically-recognized-by-tomcat">File changed automatically recognized by Tomcat</a> and I find that make hot swap enabled must be in <a href="http://stackoverflow.com/questions/26841349/eclipse-vs-intellij-hot-deploy">debugger mode</a>.
+				</p>
+				<p>
+					VM options - Due to debug and hot swap activated in the same time, they will need a lot of resources to run. <a href="https://intellij-support.jetbrains.com/hc/en-us/articles/206827537-Configuring-JVM-options-and-platform-properties">link</a>
+				</p>
+				<figure>
+					<img src="https://dl.dropboxusercontent.com/u/47510080/zestlifia/logbook/intelliJ/vmOptions.png" alt="vmOptions">
+				</figure>
+				<p>
+					Deactivation means that when you leave the focus out the IntelliJ winodw, it'll activate. The feature just like eclipse auto build. In my case, the first time I deactivate, IntelliJ will reload Java classes, the second time I deactivate, then IntelliJ show the message - <b>hot swap</b>. Indeed, how swap is the build in features in IntelliJ. 
+				</p>
+				<h3>Hot keys - IntelliJ & Mac</h3>
+				<p>Next step is to find what are the hot keys which I always use in Eclipse.</p>
+				<ul>
+					<li><b>shift + shift</b> --- find everything</li>
+					<li><b>cmd + o</b> --- find classes</li>
+					<li><b>cmd + opt + o</b> --- find symbol - <a href="https://www.jetbrains.com/idea/help/navigating-to-class-file-or-symbol-by-name.html">link</a></li>
+					<li><b>cmd + fn + f12</b> --- find function in class - <a href="http://stackoverflow.com/questions/3990289/intellij-shortcut-to-show-a-popup-of-methods-in-a-class-that-can-be-searched
+					">link</a></li>
+					<li><b>cmd + shift + p</b> --- custom find function in class</li>
+					<li><b>ctr + opt + h</b> --- open call hierarchy - <a href="https://www.jetbrains.com/idea/help/building-call-hierarchy.html">link</a></li>
+					<li><b>shift + fn + f6</b> --- rename</li>
+				</ul>
+			</section>
+			<footer>
+			  <div class="copyrights">
+			      Copyrights &copy; 2015 Zestlifia. All Rights Reserved.
+			  </div>
+			</footer>
+		</article>
+	</ion-content>
+</ion-view>

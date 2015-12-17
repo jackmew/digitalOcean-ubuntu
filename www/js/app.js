@@ -25,13 +25,18 @@ app.config(function($stateProvider, $urlRouterProvider) {
   //   url: '/book/:bookId',
   //   templateUrl: 'templates/book.html'
   // });
+  /* logbook content */
   $stateProvider.state('cordova1', {
     url: '/book/cordova1',
-    templateUrl: 'templates/cordova1.html'
+    templateUrl: 'templates/logbooks/cordova1.html'
   });
   $stateProvider.state('cordova2', {
     url: '/book/cordova2',
-    templateUrl: 'templates/cordova2.html'
+    templateUrl: 'templates/logbooks/cordova2.html'
+  });
+  $stateProvider.state('intelliJ', {
+    url: '/book/intelliJ',
+    templateUrl: 'templates/logbooks/intelliJ.html'
   });
   $urlRouterProvider.otherwise('/home');
 });
@@ -96,11 +101,19 @@ app.controller('BookCtrl', function($scope, $state) {
     // $scope.$on('$ionicView.unloaded', function (viewInfo, state) {
     //     console.log('CTRL - $ionicView.unloaded', viewInfo, state);
     // });
-    angular.element(document).ready(function() {
-        if (typeof(angular.element(document).gist) === 'function') {
-            angular.element('[data-gist-id]').gist();
-        }
-    });
+
+
+    // angular.element(document).ready(function() {
+    //     alert("ready");
+    //     if (typeof(angular.element(document).gist) === 'function') {
+    //         alert("gist()");
+    //         angular.element('[data-gist-id]').gist();
+    //     }
+    // });
+
+        // var $code = $('<code data-gist-id="474f6d7839fccffc4b2a"/>');
+        
+        // $code.appendTo('body').gist();
 });
 
 app.run(function($ionicPlatform) {

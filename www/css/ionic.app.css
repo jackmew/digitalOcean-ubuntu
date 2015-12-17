@@ -11533,6 +11533,9 @@ article ul {
   article ul li {
     list-style: disc; }
 
+b {
+  color: #00ebd4; }
+
 .titleSection {
   position: relatvie; }
   .titleSection div {
