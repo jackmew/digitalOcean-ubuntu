@@ -16,6 +16,11 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 @import url(https://fonts.googleapis.com/css?family=Megrim);
+body {
+  font-family: Lato, Helvetica, sans-serif;
+  font-size: 32px;
+  line-height: 23px; }
+
 .bar-header .title {
   color: #00ebd4;
   font-size: 30px !important;
@@ -11525,13 +11530,22 @@ a.button {
   width: 100%;
   height: 5px; }
 
-article h1, article h2, article h3, article h4, article h5, article p, article span, article ul, article li {
-  color: white; }
-
-article ul {
-  padding-left: 20px; }
-  article ul li {
-    list-style: disc; }
+article {
+  font-family: Lato, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 23px; }
+  article h1, article h2, article h3, article h4, article h5, article p, article span, article ul, article li {
+    color: white; }
+  article a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #c76c0c; }
+  article a:hover {
+    text-decoration: underline; }
+  article ul {
+    padding-left: 20px; }
+    article ul li {
+      list-style: disc; }
 
 b {
   color: #00ebd4; }
@@ -11578,7 +11592,6 @@ blockquote {
   font-size: 16px;
   line-height: 1.2;
   color: #666;
-  text-align: justify;
   /*Borders - (Optional)*/
   border-left: 15px solid #00ebd4;
   border-right: 2px solid #00ebd4;
@@ -11613,6 +11626,20 @@ blockquote a:hover {
 blockquote em {
   color: #00ebd4;
   font-style: italic; }
+
+/* < 480px */
+.titleSection div {
+  top: 50px; }
+
+/* >480px & <600px */
+@media all and (min-width: 480px) {
+  .titleSection div {
+    top: 100px; } }
+
+/* >600px */
+@media all and (min-width: 600px) {
+  .titleSection div {
+    top: 250px; } }
 
 .zButton {
   color: red;
