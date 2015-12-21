@@ -1,4 +1,4 @@
-var app = angular.module('starter', ['ionic','gist-embed']);
+var app = angular.module('starter', ['ionic','gist-embed', 'hljs']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider.state('home', {
@@ -37,6 +37,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider.state('intelliJ', {
     url: '/book/intelliJ',
     templateUrl: 'templates/logbooks/intelliJ.html'
+  });
+  $stateProvider.state('angularPromise', {
+    url: '/book/angularPromise',
+    templateUrl: 'templates/logbooks/angularPromise.html'
   });
   $urlRouterProvider.otherwise('/home');
 });

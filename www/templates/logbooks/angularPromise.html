@@ -1,0 +1,142 @@
+<ion-view view-title="Book">
+	<ion-content ng-controller="BookCtrl">
+		<article>
+		<!-- 	<header>
+				<p>My header - {{bookId}} - 2015-12-09 </p>
+			</header> -->
+			<section class="titleSection">
+				<img src="https://www.lovethispic.com/uploaded_images/38679-Promise-.jpg">
+				<div>
+					<h1>Angular promise</h1>
+				</div>
+			</section>
+			</br>
+			<section class="contentSection">
+				<h3>What Does promise mean?</h3>
+				<p>
+					The promised used for deferred and asynchronous computations. A promise represents an operation that hasn't completed yet, but is expected in the future. For example, we need to fetch data via http and we don't have the result immediately, maybe wait for response in 2 seconds or more time.
+				</p>
+				<p>
+					This is a function for x plus y .
+				</p>
+
+
+<div hljs>
+  function add(x, y) {
+     return x + y ;
+  }
+  $scope.result = add(2, 3);
+</div>
+
+				<p>
+					We want to simulate the asynchronous situation. The simplest way to do is callback function and using $timeout method to call add function after 1 second. 
+				</p>
+<div hljs>
+  function add(x, y, callback) {
+    $timeout(function() {
+      callback(x + y);
+    }, 1000);
+  }
+  var startTime = Date.now();
+  add(2, 3, function(result) {
+    $scope.result = result ;
+    $scope.elapsedTime = Date.now() - startTime ;
+  });
+  /***
+  * result: 5
+  * elaspedTime: 1003
+  ***/
+</div>
+				<p>
+					We can hava callback function to call another method again.
+				</p>
+<div hljs>
+  function add(x, y, callback) {
+    $timeout(function() {
+      callback(x + y);
+    }, 1000);
+  }
+  var startTime = Date.now();
+  add(2, 3, function(result) {
+    add(result, 4, function(result) {
+      $scope.result = result ;
+      $scope.elapsedTime = Date.now() - startTime ;
+  });  
+  /***
+  * result: 9
+  * elaspedTime: 2004
+  ***/
+</div>
+
+				<p>
+					In fact, the $timeout service will return promise object. And promises are chainable.
+				</p>
+<div hljs>
+  function add(x, y, callback) {
+    return $timeout(function() {
+      return x + y;
+    }, 1000);
+  }
+  var startTime = Date.now();
+  var promise = add(2, 3);
+  promise.then(function(result) {
+  // promise chaining
+    return add(result, 4);
+  })
+  .then(function(result) {
+    $scope.result = result ;
+    $scope.elapsedTime = Date.now() - startTime ;
+  });
+  /***
+  * result: 9
+  * elaspedTime: 2005
+  ***/
+</div>
+
+				<p>
+					$q create, resolve and reject promise.
+				</p>
+<div hljs hljs-no-escape>
+  function add(x, y, callback) {
+    var q = $q.defer();
+    setTimeout(function() {
+      var result = x + y ;
+      if(result >= 0) {
+        q.resolve(x+y);
+      } else {
+        q.reject('negative value: ' + result);
+      }
+    }, 1000);
+    return q.promise;
+  }
+  var startTime = Date.now();
+  add(2, 3)
+    .then(function(result) {
+    // will execute q.reject()
+      return add(result, -14);
+    })
+    .then(function(result) {
+      $scope.result = result ;
+    })
+    // when q.reject is executed, 
+    .catch(function(failure) {
+      $scope.failure = failure;
+    })
+    // no matter what happen, it will always execute .
+    .finally(function() {
+       $scope.elapsedTime = Date.now() - startTime ;
+    });
+  /***
+  * result: -9
+  * elaspedTime: 2005 (Due to q.reject(), there are two round.)
+  ***/
+</div>	
+			</section>
+			<footer>
+			  <div class="copyrights">
+			      Copyrights &copy; 2015 Zestlifia. All Rights Reserved.
+			  </div>
+			</footer>
+		</article>
+	</ion-content>
+</ion-view>

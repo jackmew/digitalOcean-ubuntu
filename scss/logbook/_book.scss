@@ -6,7 +6,9 @@ $articleFontSize   : 16px;
 $articleLineHeight : 23px;
 
 
-
+.hljs {
+  font-size: 0.8em !important;
+}
 // browse cards
 .zestCard {
   h2, h3 {

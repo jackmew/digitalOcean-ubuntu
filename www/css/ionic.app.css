@@ -11512,6 +11512,9 @@ a.button {
   stroke: #00ebd4;
   stroke-width: 1px; }
 
+.hljs {
+  font-size: 0.8em !important; }
+
 .zestCard h2, .zestCard h3 {
   color: #396f87; }
 
