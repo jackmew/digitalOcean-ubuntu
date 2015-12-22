@@ -17,6 +17,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
     url: '/tests',
     templateUrl: 'templates/tests.html',
   });
+
+  // logbooks
   $stateProvider.state('logbook', {
     url: '/logbook',
     templateUrl: 'templates/logbook.html'
@@ -26,6 +28,23 @@ app.config(function($stateProvider, $urlRouterProvider) {
   //   templateUrl: 'templates/book.html'
   // });
   /* logbook content */
+  $stateProvider.state('logbook.posts', {
+    url: '/posts',
+    views: {
+      'tab-posts': {
+        templateUrl: 'templates/logbooks/posts.html'
+      }
+    }
+  });
+
+  $stateProvider.state('logbook.notes', {
+    url: '/notes',
+    views: {
+      'tab-notes': {
+        templateUrl: 'templates/logbooks/notes.html'
+      }
+    }
+  });
   $stateProvider.state('cordova1', {
     url: '/book/cordova1',
     templateUrl: 'templates/logbooks/cordova1.html'
