@@ -1,8 +1,9 @@
+<!-- Notes that using ui-sref to replace with href. Detail: https://github.com/jackmew/ionic-sidemenuTabsTogether -->
 <ion-view view-title="Posts">
 	<ion-content ng-controller="LogbookCtrl" class="padding">
 		<!-- Daily / Command / Language -->
 		<ion-list class="zestCard" style="">
-			<ion-item class="item-thumbnail-right" href="#/book/cordova2">
+			<ion-item class="item-thumbnail-right" ui-sref="logbook.cordova1">
 			    <img ng-src="https://upload.wikimedia.org/wikipedia/commons/3/34/Android_Studio_icon.svg" >
 			    <h2>Find the way to access android native API in Ionic part1</h2>
 			    <h3>
@@ -14,7 +15,7 @@
 			    <div class="zestCardLine"></div>
 			</ion-item>
 
-			<ion-item class="item-thumbnail-right" href="#/book/cordova2">
+			<ion-item class="item-thumbnail-right" ui-sref="logbook.cordova2">
 			    <img ng-src="https://camo.githubusercontent.com/a0fe95b9427fefe394531ad3fdd256bf2c617e6a/687474703a2f2f696f6e69636672616d65776f726b2e636f6d2f696d672f6e67636f72646f76612d636f6e746578742d6c6f676f2e706e67" >
 			    <h2>Find the way to access android native API in Ionic part2</h2>
 				<h3>
@@ -26,7 +27,7 @@
 			    <div class="zestCardLine"></div>
 			</ion-item>
 
-			<ion-item class="item-thumbnail-right" href="#/book/intelliJ">
+			<ion-item class="item-thumbnail-right" ui-sref="logbook.intelliJ">
 			    <img ng-src="https://dl.dropboxusercontent.com/u/47510080/zestlifia/logbook/intelliJ/intellij.svg" >
 			    <h2>Coding with IntelliJ.</h2>
 				<h3>
@@ -38,7 +39,7 @@
 			    <div class="zestCardLine"></div>
 			</ion-item>
 
-			<ion-item class="item-thumbnail-right" href="#/book/angularPromise">
+			<ion-item class="item-thumbnail-right" ui-sref="logbook.angularPromise">
 			    <img ng-src="https://camo.githubusercontent.com/2f88dca5a2965a48a8dd39e00890302902942474/687474703a2f2f6b7269736b6f77616c2e6769746875622e696f2f712f712e706e67" >
 			    <h2>Angular promise</h2>
 				<h3>

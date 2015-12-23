@@ -1,6 +1,13 @@
 var app = angular.module('starter', ['ionic','gist-embed', 'hljs']);
 
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+  // make tabs on the top in android 
+  $ionicConfigProvider.tabs.position('top');
+  // display tabs in android correctly
+  $ionicConfigProvider.tabs.style('');
+
+
+
   $stateProvider.state('home', {
     url: '/home',
     templateUrl: 'templates/home.html'
@@ -18,24 +25,57 @@ app.config(function($stateProvider, $urlRouterProvider) {
     templateUrl: 'templates/tests.html',
   });
 
-  // logbooks
+  /* 
+  * logbooks
+  * make post has history for 
+  * enter the post will showing the back button.
+  */
   $stateProvider.state('logbook', {
     url: '/logbook',
+    abstract: true,
     templateUrl: 'templates/logbook.html'
-  });
-  // $stateProvider.state('book', {
-  //   url: '/book/:bookId',
-  //   templateUrl: 'templates/book.html'
-  // });
-  /* logbook content */
-  $stateProvider.state('logbook.posts', {
+  })
+  .state('logbook.posts', {
     url: '/posts',
     views: {
       'tab-posts': {
         templateUrl: 'templates/logbooks/posts.html'
       }
     }
+  })
+  .state('logbook.cordova1', {
+    url: '/posts/cordova1',
+    views: {
+      'tab-posts': {
+        templateUrl: 'templates/logbooks/cordova1.html'
+      }
+    }
+  })
+  .state('logbook.cordova2', {
+    url: '/posts/cordova2',
+    views: {
+      'tab-posts': {
+        templateUrl: 'templates/logbooks/cordova2.html'
+      }
+    }
+  })
+  .state('logbook.intelliJ', {
+    url: '/posts/intelliJ',
+    views: {
+      'tab-posts': {
+        templateUrl: 'templates/logbooks/intelliJ.html'
+      }
+    }
+  })
+  .state('logbook.angularPromise', {
+    url: '/posts/angularPromise',
+    views: {
+      'tab-posts': {
+        templateUrl: 'templates/logbooks/angularPromise.html'
+      }
+    }
   });
+
 
   $stateProvider.state('logbook.notes', {
     url: '/notes',
@@ -45,22 +85,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       }
     }
   });
-  $stateProvider.state('cordova1', {
-    url: '/book/cordova1',
-    templateUrl: 'templates/logbooks/cordova1.html'
-  });
-  $stateProvider.state('cordova2', {
-    url: '/book/cordova2',
-    templateUrl: 'templates/logbooks/cordova2.html'
-  });
-  $stateProvider.state('intelliJ', {
-    url: '/book/intelliJ',
-    templateUrl: 'templates/logbooks/intelliJ.html'
-  });
-  $stateProvider.state('angularPromise', {
-    url: '/book/angularPromise',
-    templateUrl: 'templates/logbooks/angularPromise.html'
-  });
+
   $urlRouterProvider.otherwise('/home');
 });
 app.controller('HomeCtrl', function($scope, $timeout) {
